@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Helvetica, sans-serif;
+    color: #ececec;
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    background: url("https://r2.guns.lol/e8c50fa9-8c55-4bcc-b602-223c9c2d2048.webp") center/cover no-repeat;
+}
+
+
+/* Scroll Design */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #c2c2c2;
+}
+
+/* Image draggable */
+
+img {
+    -webkit-user-drag: none;
+    /* user-drag: none; */
+}
