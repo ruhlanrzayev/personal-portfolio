@@ -5,6 +5,7 @@
     scroll-behavior: smooth;
     font-family: Helvetica, sans-serif;
     color: #ececec;
+    user-select: none;
 
     ul {
         list-style: none;
