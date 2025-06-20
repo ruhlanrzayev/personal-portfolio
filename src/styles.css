@@ -2,14 +2,38 @@
     --baseColor: #8b54b7;
 }
 
-/* Main CSS */
-main {
+/* Click Container CSS */
+.click-container {
     height: 100vh;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
+    background-color: #000000ea;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
-    /* Card CSS */
+    p {
+        font: bold 1.2em 'Source Code Pro', sans-serif;
+        text-shadow: 2px 2px 8px var(--baseColor);
+    }
+}
+
+/* Main Container CSS */
+.main-container {
+    height: 100vh;
+    display: none;
+    margin: 0 auto;
+    width: 800px;
+    max-width: calc(100% - 20px);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(75px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+        /* Card CSS */
     .card-container {
         width: 100%;
         display: flex;
@@ -19,7 +43,9 @@ main {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        background-color: #00000060;
+        background-color: #00000075;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
 
         /* TOP CONTENT CSS */
         .top-content {
@@ -39,6 +65,7 @@ main {
                 height: 108px;
                 box-sizing: border-box;
                 transition: border-color 0.3s;
+                box-shadow: 2px 2px 8px var(--baseColor);
 
                 img { 
                     display: block;
@@ -56,7 +83,13 @@ main {
             }
 
             h2 {
+                cursor: pointer;
                 text-align: center;
+                text-shadow: 2px 2px 8px white;
+            }
+
+            span {
+                color: var(--baseColor);
             }
         }
 
@@ -76,30 +109,106 @@ main {
 
         /* SOCIAL CONTENT CSS */
         .social-content {
+            gap: 25px;
             display: flex;
+            margin: 10px 0;
             align-items: center;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
 
             .social-button {
-                width: 200px;
-                margin: 10px;
-                gap: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                padding: 10px 20px;
-                border-radius: 25px;
-                background-color: var(--baseColor);
-                transition: all 200ms ease-in-out;
-                border: 2px solid transparent;
+                text-shadow: 1px 1px 3px white;
+                font-size: 1.5em;
+                transition: all 100ms ease-in-out, transform 150ms ease-in-out;
             }
         }
     }
+
+    /* Audio Container CSS */
+    .audio-container {
+        width: 100%;
+        margin: 20px 40px;
+        background-color: #00000075;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 15px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+
+        .audio-controls {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            
+            .audio-left {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    display: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+            }
+
+            .audio-right {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                input[type="range"] {
+                    flex-grow: 1;
+                    appearance: none;
+                    height: 4px;
+                    border-radius: 2px;
+                    background: var(--baseColor);
+                }
+
+                input[type="range"]::-webkit-slider-thumb {
+                    appearance: none;
+                    width: 10px;
+                    height: 10px;
+                    background: var(--baseColor);
+                    border-radius: 50%;
+                    border: 1px solid var(--baseColor);
+                }
+                span {
+                    font: 0.9em 'Source Code Pro', sans-serif;
+                }
+                
+                button {
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
 }
 
 
+
+/* Responsive CSS */
 @media screen and (min-width: 884px) {
+    /* Click Container */
+    .click-container {
+        p {
+            font-size: 1.8em!important;
+        }
+    }
+    /* Card Container */
     .card-container {
         width: 800px!important;
 
@@ -113,27 +222,54 @@ main {
             p {
                 font: italic 1.15em 'Raleway', sans-serif!important;
             }
-        }
+        }   
 
         .social-content {
+            gap: 30px!important;
             .social-button {
-                border-radius: 75px!important;
-                width: 250px!important;
-                justify-content: space-around!important;
-                padding: 8px 16px!important;
-                
-                p:first-child {
-                    font-size: 1.5em;
-                }
-                p:last-child {
-                    font-size: 1.1em;
-                }
+                scale: 1.1;
+                font-size: 2.2em!important;
+            }
+            
+            .instagram:hover {
+                text-shadow: 2px 2px 5px purple;
+                color: #9f009f;
+                transform: scale(1.2);
             }
 
-            .social-button:hover {
-                background-color: #462e5a;
-                border: 2px solid #8b54b7
+            .mail:hover {
+                text-shadow: 2px 2px 5px orange;
+                color: #dba94d;
+                transform: scale(1.2);
             }
+
+            .github:hover {
+                text-shadow: 2px 2px 5px #696561;
+                color: #3f3d39;
+                transform: scale(1.2);
+            }
+
+            .linkedin:hover {
+                text-shadow: 2px 2px 5px #045e8f;
+                color: #0077b5;
+                transform: scale(1.2);
+            }
+
+            .cv:hover {
+                text-shadow: 2px 2px 5px rgb(127, 48, 127);
+                color: var(--baseColor);
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .audio-container {
+        .song-info {
+            display: initial;
+        }
+
+        img {
+            display: flex!important;
         }
     }
 }

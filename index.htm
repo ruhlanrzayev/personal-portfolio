@@ -28,14 +28,22 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=WDXL+Lubrifont+SC&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <!-- Main Stucture -->
-    <main>
+    <!-- Click Container -->
+    <div class="click-container" id="clickContainer">
+        <p>click to enter...</p>
+    </div>
 
-        <!-- Card Structure -->
+    <!-- Main Container -->
+    <div class="main-container" id="mainContainer">
+        <!-- Card Container -->
         <div class="card-container">
 
             <!-- Top Content -->
@@ -58,26 +66,37 @@
             <!-- Social Content -->
             <div class="social-content">
                 <!-- Social Buttons -->
-                <a href="https://github.com/ruhlanrzayev" target="_blank" class="social-button">
-                    <p class="fa-brands fa-github"></p> 
-                    <p> GitHub Profile</p>
+                <a href="images/RuhlanRzayevCV.pdf" target="_blank" class="social-button fa-solid fa-file cv">
                 </a>
-                <a href="mailto:contactruhlanrzayev@gmail.com" target="_blank" class="social-button">
-                    <p class="fa-solid fa-envelope"></p> 
-                    <p> Gmail Address</p>
+                <a href="https://github.com/ruhlanrzayev" target="_blank" class="social-button fa-brands fa-github github">
                 </a>
-                <a href="https://linkedin.com/in/ruhlanrzayev" target="_blank" class="social-button">
-                    <p class="fa-brands fa-linkedin-in"></p> 
-                    <p> LinkedIn Profile</p>
+                <a href="mailto:contactruhlanrzayev@gmail.com" target="_blank" class="social-button fa-solid fa-envelope mail">
                 </a>
-                <a href="https://instagram.com/ruhlanrzayev" target="_blank" class="social-button">
-                    <p class="fa-brands fa-instagram"></p> 
-                    <p> Instagram Profile</p>
+                <a href="https://linkedin.com/in/ruhlanrzayev" target="_blank" class="social-button fa-brands fa-linkedin-in linkedin">
+                </a>
+                <a href="https://instagram.com/ruhlanrzayev" target="_blank" class="social-button fa-brands fa-instagram instagram">
                 </a>
             </div>
         </div>
-    </main>
 
+        <!-- Audio Container -->
+        <div class="audio-container">
+            <audio id="sonBaharAudio" src="images/music.mp3"></audio>
+            <div class="audio-controls">
+                <div class="audio-left">
+                    <img src="images/music.png" alt="Song Icon" />
+                </div>
+                <div class="audio-right">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="progressBar" value="0" min="0" step="1">
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
