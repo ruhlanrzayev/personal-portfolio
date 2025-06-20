@@ -15,7 +15,7 @@ clickCont.addEventListener('click', () => {
         mainCont.style.transform = 'translateY(0)';
     }, 10); 
 
-    music.volume = 0.3;
+    music.volume = 1;
     music.loop = true;
     music.play();
 });
